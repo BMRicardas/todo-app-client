@@ -1,5 +1,6 @@
 import "./app.css";
+import { TodoPage } from "./pages/todo.page";
 
 export function App() {
-  return null;
+  return <TodoPage />;
 }
