@@ -1,0 +1,94 @@
+/* button.module.css */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.submit {
+  background-color: #2563eb;
+  color: white;
+}
+
+.submit:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.edit {
+  background-color: #eab308;
+  color: white;
+}
+
+.edit:hover:not(:disabled) {
+  background-color: #ca8a04;
+}
+
+.delete {
+  background-color: #dc2626;
+  color: white;
+}
+
+.delete:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+/* Sizes */
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Icons */
+.iconLeft {
+  margin-right: 0.5rem;
+  display: inline-flex;
+}
+
+.iconRight {
+  margin-left: 0.5rem;
+  display: inline-flex;
+}
+
+/* Loading state */
+.loading {
+  position: relative;
+  color: transparent;
+}
+
+.spinner {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

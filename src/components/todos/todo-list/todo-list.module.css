@@ -1,0 +1,20 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-gray-500);
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .todoList {
+    padding: 0 var(--spacing-md);
+  }
+}

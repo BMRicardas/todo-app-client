@@ -1,0 +1,70 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+
+.spinner {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: currentColor;
+  border-right-color: transparent;
+  animation: spin 0.75s linear infinite;
+}
+
+.primary {
+  color: #2563eb;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.gray {
+  color: #6b7280;
+}
+
+.sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+}
+
+.md {
+  width: 2rem;
+  height: 2rem;
+  border-width: 3px;
+}
+
+.lg {
+  width: 3rem;
+  height: 3rem;
+  border-width: 4px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
