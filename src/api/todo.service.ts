@@ -19,7 +19,7 @@ export async function createTodo(
   todo: Omit<Todo, "_id" | "status">
 ): Promise<Todo> {
   const response = await axiosInstance.post("/todos", todo);
-  return response.data;
+  return response.data.todo;
 }
 
 export async function updateTodo(
@@ -28,7 +28,7 @@ export async function updateTodo(
 ): Promise<Todo> {
   const response = await axiosInstance.put(`/todos/${id}`, todo);
 
-  return response.data;
+  return response.data.todo;
 }
 
 export async function deleteTodo(id: number): Promise<AxiosResponse<void>> {
