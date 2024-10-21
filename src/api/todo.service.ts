@@ -19,7 +19,6 @@ export async function createTodo(
   todo: Omit<Todo, "_id" | "status">
 ): Promise<Todo> {
   const response = await axiosInstance.post("/todos", todo);
-  console.log(todo);
   return response.data;
 }
 
