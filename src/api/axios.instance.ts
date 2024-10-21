@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export const axiosInstance = axios.create({
-  baseURL: process.env.VERCEL_URL || "http://localhost:8000",
+  baseURL: apiUrl,
   headers: {
     "Content-type": "application/json",
   },
