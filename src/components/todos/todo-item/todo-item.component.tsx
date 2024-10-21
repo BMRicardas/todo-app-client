@@ -14,7 +14,7 @@ type Props = {
   todo: Todo;
 };
 
-export const TodoItem = ({ todo }: Props) => {
+export function TodoItem({ todo }: Props) {
   const [isEditing, setIsEditing] = useState(false);
   const { editTodo, deleteTodo } = useTodoStore();
   const methods = useForm<Todo>({
@@ -128,4 +128,4 @@ export const TodoItem = ({ todo }: Props) => {
       </FormProvider>
     </div>
   );
-};
+}
