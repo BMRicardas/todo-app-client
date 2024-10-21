@@ -30,6 +30,7 @@ export const useTodoStore = create<TodoState>((set) => ({
     } catch (error) {
       console.error("Failed to fetch todos: ", error);
       set({ error: "Failed to fetch todos", loading: false });
+      throw error;
     }
   },
 
@@ -41,6 +42,7 @@ export const useTodoStore = create<TodoState>((set) => ({
     } catch (error) {
       console.error("Failed to add todo: ", error);
       set({ error: "Failed to add todo", loading: false });
+      throw error;
     }
   },
 
@@ -57,6 +59,7 @@ export const useTodoStore = create<TodoState>((set) => ({
     } catch (error) {
       console.error("Failed to edit todo: ", error);
       set({ error: "Failed to edit todo", loading: false });
+      throw error;
     }
   },
 
@@ -71,6 +74,7 @@ export const useTodoStore = create<TodoState>((set) => ({
     } catch (error) {
       console.error("Failed to delete todo: ", error);
       set({ error: "Failed to delete todo", loading: false });
+      throw error;
     }
   },
 }));
