@@ -5,4 +5,4 @@ export const config = {
       : "http://localhost:8000",
 };
 
-console.log({ config });
+console.log("Config", { config });
