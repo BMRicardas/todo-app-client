@@ -1,30 +1,27 @@
-import { Todo } from "@/types/todo";
+import { Loading } from "@/components/common/loading/loading.component";
+import { TodoItem } from "@/components/todos/todo-item/todo-item.component";
+import { useTodoStore } from "@/stores/todo.store";
 
 import styles from "./todo-list.module.css";
-import { TodoItem } from "../todo-item/todo-item.component";
-import { Loading } from "@/components/common/loading/loading.coponent";
+import { useEffect } from "react";
 
-interface Props {
-  todos: Todo[];
-  onStatusChange: (id: number, status: boolean) => Promise<void>;
-  onDelete: (id: number) => Promise<void>;
-  onEdit: (id: number, text: string) => Promise<void>;
-  isLoading?: boolean;
-}
+export function TodoList() {
+  const { todos, loading, error, fetchTodos } = useTodoStore();
 
-export function TodoList({
-  todos,
-  onStatusChange,
-  onDelete,
-  onEdit,
-  isLoading,
-}: Props) {
-  if (isLoading) {
+  useEffect(() => {
+    fetchTodos();
+  }, [fetchTodos]);
+
+  if (loading) {
     return (
       <div className={styles.loadingState}>
         <Loading size="lg" />
       </div>
     );
+  }
+
+  if (error) {
+    return <div className={styles.errorState}>Error: {error}</div>;
   }
 
   if (todos.length === 0) {
@@ -38,13 +35,7 @@ export function TodoList({
   return (
     <div className={styles.todoList}>
       {todos.map((todo) => (
-        <TodoItem
-          key={todo._id}
-          todo={todo}
-          onStatusChange={onStatusChange}
-          onDelete={onDelete}
-          onEdit={onEdit}
-        />
+        <TodoItem key={todo._id} todo={todo} />
       ))}
     </div>
   );

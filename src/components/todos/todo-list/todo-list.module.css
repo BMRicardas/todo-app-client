@@ -9,7 +9,21 @@
 .emptyState {
   text-align: center;
   padding: var(--spacing-xl);
-  color: var(--color-gray-500);
+  color: var(--color-green-500);
+  font-size: 1rem;
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.errorState {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-danger);
   font-size: 1rem;
 }
 
