@@ -1,8 +1,7 @@
 import axios from "axios";
-import { config } from "../../config";
 
 export const axiosInstance = axios.create({
-  baseURL: config.API_URL,
+  baseURL: process.env.VERCEL_URL || "http://localhost:8000",
   headers: {
     "Content-type": "application/json",
   },
