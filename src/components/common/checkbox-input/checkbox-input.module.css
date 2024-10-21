@@ -1,14 +1,13 @@
-/* checkbox.module.css */
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--spacing-xs);
 }
 
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-sm);
 }
 
 .input {
@@ -22,16 +21,16 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  border: 2px solid #d1d5db;
-  border-radius: 4px;
+  border: 2px solid var(--color-green-300);
+  border-radius: var(--radius-sm);
   position: relative;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .input:checked + .checkbox {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .input:checked + .checkbox::after {
@@ -53,10 +52,10 @@
 
 .label {
   font-size: 0.875rem;
-  color: #374151;
+  color: var(--color-green-700);
 }
 
 .error {
-  color: #dc2626;
+  color: var(--color-danger);
   font-size: 0.75rem;
 }
