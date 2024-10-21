@@ -4,3 +4,5 @@ export const config = {
       ? "https://todo-app-server-3jo80m8xf-bmricardas-projects.vercel.app"
       : "http://localhost:8000",
 };
+
+console.log({ config });
