@@ -1,10 +1,10 @@
-import { ComponentProps, forwardRef, ReactNode } from "react";
-
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import { clsx } from "clsx";
 import styles from "./button.module.css";
 
-type Props = ComponentProps<"button"> & {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
-  variant?: "submit" | "edit" | "delete";
+  variant?: "primary" | "secondary" | "success" | "danger" | "warning";
   size?: "sm" | "md" | "lg";
   loading?: boolean;
   icon?: ReactNode;
@@ -15,12 +15,13 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
   (
     {
       children,
-      variant = "submit",
+      variant = "primary",
       size = "md",
       loading = false,
       icon,
       iconPosition = "left",
       disabled,
+      className,
       ...props
     },
     ref
@@ -28,9 +29,13 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     return (
       <button
         ref={ref}
-        className={`${styles.button} ${styles[variant]} ${styles[size]} ${
-          loading ? styles.loading : ""
-        }`}
+        className={clsx(
+          styles.button,
+          styles[variant],
+          styles[size],
+          loading && styles.loading,
+          className
+        )}
         disabled={disabled || loading}
         {...props}>
         {loading && <span className={styles.spinner} />}
@@ -45,3 +50,5 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     );
   }
 );
+
+Button.displayName = "Button";
