@@ -4,13 +4,22 @@
   justify-content: center;
 }
 
+.inline {
+  display: inline-flex;
+}
+
 .fullScreen {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(
+    240,
+    253,
+    244,
+    0.8
+  ); /* Using --color-green-50 with opacity */
   z-index: 9999;
 }
 
@@ -23,32 +32,44 @@
 }
 
 .primary {
-  color: #2563eb;
+  color: var(--color-primary);
 }
 
 .white {
   color: #ffffff;
 }
 
-.gray {
-  color: #6b7280;
+.green {
+  color: var(--color-green-500);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.warning {
+  color: var(--color-warning);
 }
 
 .sm {
-  width: 1rem;
-  height: 1rem;
+  width: var(--spacing-md);
+  height: var(--spacing-md);
   border-width: 2px;
 }
 
 .md {
-  width: 2rem;
-  height: 2rem;
+  width: var(--spacing-lg);
+  height: var(--spacing-lg);
   border-width: 3px;
 }
 
 .lg {
-  width: 3rem;
-  height: 3rem;
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
   border-width: 4px;
 }
 
